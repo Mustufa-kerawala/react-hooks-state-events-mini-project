@@ -14,7 +14,7 @@ function App() {
       <h2>My tasks</h2>
       <CategoryFilter data={CATEGORIES} />
       <NewTaskForm />
-      <TaskList tasks={TASKS} />
+      <TaskList tasksData={TASKS} />
     </div>
   );
 }
