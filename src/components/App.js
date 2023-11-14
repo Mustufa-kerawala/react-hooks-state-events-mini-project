@@ -21,11 +21,15 @@ function App() {
     return task.category === selectedCategory;
   });
 
+  const taskFormSubmit = (formData) => {
+    console.log(formData);
+  };
+
   return (
     <div className="App">
       <h2>My tasks</h2>
       <CategoryFilter categories={CATEGORIES} onCategoryClick={handleCategoryClick} />
-      <NewTaskForm />
+      <NewTaskForm categories={CATEGORIES} taskFormSubmit={taskFormSubmit} />
       <TaskList tasksData={tasksToDisplay} />
     </div>
   );
