@@ -1,9 +1,12 @@
 import React from "react";
 
-function CategoryFilter({data}) {
+function CategoryFilter({categories, onCategoryClick}) {
 
-  function handleFilterClick() {
+  
+
+  function handleFilterClick(category) {
     console.log("Filter button is clicked!");
+    onCategoryClick(category);
   }
 
   
@@ -13,8 +16,8 @@ function CategoryFilter({data}) {
       <h5>Category filters</h5>
       {/* render <button> elements for each category here */}
       {/* Creating categories for this component */}
-      {data.map((category) => (
-        <button key={category} onClick={handleFilterClick} >{category} </button>
+      {categories.map((category) => (
+        <button key={category} onClick={() => handleFilterClick(category)} >{category} </button>
       ))}
     </div>
   );
